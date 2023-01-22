@@ -1,0 +1,12 @@
+<div>
+    <h1 class="main-cont">Book My Seat</h1>
+  
+      <div class="movies">
+          <div  *ngFor="let movie of movies" >
+             <div class="movie-card" routerLink="/booking/{{movie.id}}" (click)="addMatrixAtLocalStorage(movie.id)">
+              <img class="movie-card-image" [src]="movie.img" />
+              <p class="movie-card-name" >{{movie.name}}</p>
+          </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,54 @@
+{
+  "booking": [
+    {
+      "id": "1",
+      "name":"Malang",
+      "row": 10,
+      "collum": 24
+    },
+    {
+      "id": "2",
+      "name":"Pathaan",
+      "row": 6,
+      "collum": 24
+    },
+    {
+      "id": "3",
+      "name":"Avataar",
+      "row": 5,
+      "collum": 24
+    }, 
+    {
+      "id": "4",
+      "name":"Ek Villain Return",
+      "row": 5,
+      "collum": 24
+    },
+     {
+      "id": "5",
+      "name":"Bramhashtra",
+      "row": 5,
+      "collum": 24
+    },
+     {
+      "id": "6",
+      "name":"Vikram Veda",
+      "row": 5,
+      "collum": 24
+    }, 
+    {
+      "id": "7",
+      "name":"Aashiqui2",
+      "row": 5,
+      "collum": 24
+    }, 
+    {
+      "id": "8",
+      "name":"Dhoom:3",
+      "row": 5,
+      "collum": 24
+    }
+
+  ]
+ 
+}

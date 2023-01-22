@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="all-div-horizontal">
+        <div class="form-content">
+            <form>
+            <div class="form_field">
+                <label class="heading-cont" for="seat_type">Seat Type : </label>
+                <select class="input-box" name="seat_type" [(ngModel)]="wantPremium" (change)="reset()">
+                    <option value="f">Standard</option>
+                    <option value="t">Premium</option>
+                </select>
+            </div>
+            <div class="form_field">
+                <label class="heading-cont" for="seat_count">Number of seats : </label>
+                <select class="input-box" name="seat_count" [(ngModel)]="totalSeatCount" (change)="reset()">
+                    <option *ngFor="let val of [].constructor(10); let i = index" [value]="i+1">{{i+1}}</option>
+                </select>
+            </div>
+        </form>
+        </div>
+
+        <div class="total-div-container">
+
+            <div id="box" class="all-seat">
+                <h5 class="heading-tag-seat">premium</h5>
+                <div class="seat_row" *ngFor="let seatRow of PremiumSeats let i = index" [attr.data-index]="i">
+                    <div class="row_name">{{rows.PremiumSeats[i]}}</div>
+                    <div *ngFor="let seat of seatRow let j = index" [attr.data-index]="j" 
+                       (click)="seatSelectedPremium(i,j,PremiumSeats)" 
+                        [ngClass]="{'selected':selectedPremiumSeats[i][j]===true,'blocked':wantPremium==='f'|| seat==true   }">
+                        {{j+1}}
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                 <h5 class="heading-tag-seat">Standard</h5>
+                <div class="seat_row" *ngFor="let seatRow of StandardSeats let i = index" [attr.data-index]="i">
+                    <div class="row_name">{{rows.StandardSeats[i]}}</div>
+                    <div *ngFor="let seat of seatRow let j = index" [attr.data-index]="j" 
+                           
+                        (click)="seatSelectedStandard(i,j,StandardSeats)" 
+                        [ngClass]="{'selected':selectedStandardSeats[i][j]===true,'blocked':wantPremium==='t'|| seat==true   }">
+                        {{j+1}}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="seat-key-container">
+
+                <div class="seat-key">
+                    <h5>Key to seat layout</h5>
+                    <div class="seat-type-color">
+                        <div class="seat-available">
+                        </div>
+                        <div>Available</div>
+                    </div>
+                    <div class="seat-type-color">
+                        <div class="seat-unavailable">
+                        </div>
+                        <div>Unavailable</div>
+                    </div>
+                    <div class="seat-type-color">
+                        <div class="your-selection">
+                        </div>
+                        <div>Your selection</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    <div class="button-msg">
+    <div class="button-div" *ngIf="enableBook" class="book" (click)="onBook()">Book</div>
+    </div>
+</div>
